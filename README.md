@@ -1,1 +1,1 @@
-# thehive-cortex-scripts
+# thehive-cortex-programs
