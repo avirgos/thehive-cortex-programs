@@ -1,0 +1,22 @@
+{
+    "name": "Send-SMS",
+    "version": "1.0",
+    "author": "Antoine Virgos",
+    "url": "",
+    "license": "",
+    "description": "Send a SMS when an alert with High or Critical severity is created.",
+    "dataTypeList": [
+        "thehive:alert"
+    ],
+    "baseConfig": "Send-SMS",
+    "configurationItems": [
+        {
+            "name": "api_key",
+            "description": "TheHive API key.",
+            "type": "string",
+            "multi": false,
+            "required": true
+        }
+    ],
+    "dockerImage": "avirgos/send-sms:1.0"
+}
