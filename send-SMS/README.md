@@ -2,7 +2,7 @@
 
 ## Overview
 
-Cortex responder to send an SMS if a High or Critical TheHive alert has been created.
+Cortex responder to send an SMS if a `High` or `Critical` TheHive alert has been created.
 
 ![cortex-responder](assets/img/cortex-responder.png)
 
@@ -32,7 +32,29 @@ In the Python program `send-SMS.py`, change this variables :
 
 Responder triggering should be configured automatically.
 
-On your TheHive platform, go to "**Organization**" > "**\<organization-name>**" > "**Notifications**" menu and create a notification named "Send SMS". Add the following data shown in the screenshot below :
+On your TheHive platform, go to "**Organization**" > "**\<organization-name>**" > "**Notifications**" menu and create a notification named "Send SMS". Add the following data :
+
+```json
+{
+    "_and": [
+        {
+            "_is": {
+                "action": "create"
+            }
+        },
+        {
+            "_is": {
+                "objectType": "Alert"
+            }
+        },
+        {
+            "_gte": {
+                "details.severity": 3
+            }
+        }
+    ]
+}
+```
 
 ![thehive-notification](assets/img/thehive-notification.png)
 

@@ -7,7 +7,7 @@ use URI::Escape;
 my $number = $ARGV[0];
 my $msg = uri_escape($ARGV[1]);
 
-my @servers = ("smsdi.chu-lyon.fr", "smsa2.chu-lyon.fr");
+my @servers = ("sms-server1", "sms-server2");
 my $port = "8000";
 my $path = "/SMS?pwd=iqsim&number=$number&notification=1&text=";
 my $error = 0;
