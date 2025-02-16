@@ -17,6 +17,7 @@ https://<thehive-url>/alerts/<alert-id>/details
 
 ## Prerequisites
 
+- Cortex on your TheHive instance
 - TheHive API key of your service account
 
 ## Usage

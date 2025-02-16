@@ -5,10 +5,10 @@
         "client_secret": "",
         "resource": ""
     },
-    "proxy": {
-        "url": ""
-    },
     "thehive": {
         "api_key": ""
+    },
+    "proxy": {
+        "url": ""
     }
 }

@@ -10,13 +10,13 @@ Python script to create and update alerts in TheHive based on Microsoft Graph Se
 pip install -r requirements.txt
 ```
 
-- Azure AD service account with Microsoft Graph API access and permissions to retrieve security alerts: `SecurityEvents.Read.All`, `SecurityEvents.ReadWrite.All`
+- Azure AD service account with Microsoft Graph API access and permissions to retrieve security alerts : `SecurityEvents.Read.All`, `SecurityEvents.ReadWrite.All`
 - TheHive API key of your service account
 - Proxy settings (optional)
 
-## Usage
+## Usage
 
-To use the `secdetection` script, you need to copy the `config-template.json` and renamed it to `config.json` using this command :
+To use the `secdetection` Python script, you need to copy the `config-template.json` and renamed it to `config.json` using this command :
 
 ```bash
 cp config-template.json config.json
@@ -32,11 +32,11 @@ In `config.json` file, complete the fields :
         "client_secret": "",
         "resource": ""
     },
-    "proxy": {
-        "url": ""
-    },
     "thehive": {
         "api_key": ""
+    },
+        "proxy": {
+        "url": ""
     }
 }
 ```
@@ -56,7 +56,7 @@ CONFIG_FILE_PATH = "<config-file-path>"
 
 ### Execution mode
 
-The script should be configured to run automatically at regular intervals to fetch and process new alerts.
+The Python script should be configured to run automatically at regular intervals to fetch and process new alerts.
 
 Run the script **every minute** using a cron job :
 
