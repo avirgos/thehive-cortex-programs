@@ -4,6 +4,11 @@ from cortexutils.responder import Responder
 import subprocess
 import os
 
+# phone number to which the SMS will be sent
+SMS_PHONE_NUMBER = "<sms-phone-number>"
+# TheHive instance URL
+THEHIVE_URL = "<thehive-url>"
+
 class SendSMS(Responder):
     def __init__(self):
         """Initialize a SendSMS responder."""
@@ -25,19 +30,13 @@ class SendSMS(Responder):
 
         alert_severity = self.severity_int_to_str(alert_severity)
 
-        ##########################
-        # To be modified by user #
-        ##########################
-        sms_phone_number = "<sms-phone-number>"
-        thehive_url = "<thehive-url>"
-        
-        sms_text = "[On-call duty] " + "\n" + "TheHive alert { " + alert_severity + " } : " + alert_title + "\n\n" + "https://" + thehive_url + "/alerts/" + alert_id + "/details"
+        sms_text = "[On-call duty] " + "\n" + "TheHive alert { " + alert_severity + " } : " + alert_title + "\n\n" + "https://" + THEHIVE_URL + "/alerts/" + alert_id + "/details"
 
-        if sms_phone_number and sms_text:
-            result = self.send_sms(sms_phone_number, sms_text)
+        if SMS_PHONE_NUMBER and sms_text:
+            result = self.send_sms(SMS_PHONE_NUMBER, sms_text)
 
             if result:
-                self.report({"status": "SMS sent successfully !"})
+                self.report({"status": "SMS sent successfully!"})
             else:
                 self.error("Failed to send SMS.")
         else:
@@ -64,7 +63,7 @@ class SendSMS(Responder):
 
     def send_sms(self, number, text):
         """
-        Call the perl script to send an SMS.
+        Call the Perl script to send an SMS.
 
         Args:
             number (str): The phone number to send the SMS to.

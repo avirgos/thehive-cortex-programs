@@ -15,22 +15,26 @@ TheHive alert { <severity> } : <alert-title>
 https://<thehive-url>/alerts/<alert-id>/details
 ```
 
+## Prerequisites
+
+- TheHive API key of your service account
+
 ## Usage
 
-On Cortex, to enable `Send-SMS_1_0` responder, you have to add TheHive API key of your service account `api_key`.
+In the Python program `send-SMS.py`, update the following global variables :
 
-In the Python program `send-SMS.py`, change this variables :
-
-![variables-to-modify](assets/img/variables-to-modify.png)
-
-- **\<sms-phone-number>** - Phone number to which the SMS will be sent
-- **\<thehive-url>** - URL of your TheHive platform
+```py
+# phone number to which the SMS will be sent
+SMS_PHONE_NUMBER = "<sms-phone-number>"
+# TheHive instance URL
+THEHIVE_URL = "<thehive-url>"
+```
 
 ## Configuration
 
 ### Execution mode
 
-Responder triggering should be configured automatically.
+Responder triggering should be configured to run automatically when specific conditions are met to send SMS notifications.
 
 On your TheHive platform, go to "**Organization**" > "**\<organization-name>**" > "**Notifications**" menu and create a notification named "Send SMS". Add the following data :
 
