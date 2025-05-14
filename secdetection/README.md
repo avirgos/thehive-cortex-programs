@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-To use the `secdetection` Python script, you need to copy the `config-template.json` and renamed it to `config.json` using this command :
+To use the `secdetection` Python script, you need to copy the `config-template.json` and rename it to `config.json` using this command :
 
 ```bash
 cp config-template.json config.json
@@ -32,11 +32,11 @@ In `config.json` file, complete the fields :
         "client_secret": "",
         "resource": ""
     },
+    "proxy": {
+        "url": ""
+    },
     "thehive": {
         "api_key": ""
-    },
-        "proxy": {
-        "url": ""
     }
 }
 ```
