@@ -9,7 +9,7 @@ my $msg = uri_escape($ARGV[1]);
 
 my @servers = ("sms-server1", "sms-server2");
 my $port = "8000";
-my $path = "/SMS?pwd=iqsim&number=$number&notification=1&text=";
+my $path = "/SMS?pwd=******&number=$number&notification=1&text=";
 my $error = 0;
 
 sub get_current_time {
@@ -27,7 +27,7 @@ sub test_connexion {
 
 sub send_sms {
     my ($server, $port, $number, $msg) = @_;
-    my $url = "http://$server:$port/SMS?pwd=iqsim&number=$number&notification=1&text=$msg";
+    my $url = "http://$server:$port/SMS?pwd=******&number=$number&notification=1&text=$msg";
 
     my $return = get($url);
 

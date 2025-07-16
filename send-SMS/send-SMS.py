@@ -6,8 +6,8 @@ import os
 
 # phone number to which the SMS will be sent
 SMS_PHONE_NUMBER = "<sms-phone-number>"
-# TheHive instance URL
-THEHIVE_URL = "<thehive-url>"
+# TheHive API instance URL
+THEHIVE_API_URL = "https://<thehive>/api/v1"
 
 class SendSMS(Responder):
     def __init__(self):
@@ -30,7 +30,7 @@ class SendSMS(Responder):
 
         alert_severity = self.severity_int_to_str(alert_severity)
 
-        sms_text = "[On-call duty] " + "\n" + "TheHive alert { " + alert_severity + " } : " + alert_title + "\n\n" + "https://" + THEHIVE_URL + "/alerts/" + alert_id + "/details"
+        sms_text = "[On-call duty] " + "\n" + "TheHive alert { " + alert_severity + " } : " + alert_title + "\n\n" + "https://" + THEHIVE_API_URL + "/alerts/" + alert_id + "/details"
 
         if SMS_PHONE_NUMBER and sms_text:
             result = self.send_sms(SMS_PHONE_NUMBER, sms_text)

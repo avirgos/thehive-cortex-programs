@@ -19,6 +19,7 @@ https://<thehive-url>/alerts/<alert-id>/details
 
 - Cortex on your TheHive instance
 - TheHive API key of your service account
+- SMS server(s)
 
 ## Usage
 
@@ -27,8 +28,22 @@ In the Python program `send-SMS.py`, update the following global variables :
 ```py
 # phone number to which the SMS will be sent
 SMS_PHONE_NUMBER = "<sms-phone-number>"
-# TheHive instance URL
-THEHIVE_URL = "<thehive-url>"
+# TheHive API instance URL
+THEHIVE_API_URL = "https://<thehive>/api/v1"
+```
+
+In the Perl script `send-SMS.pl`, add your SMS servers here :
+
+```pl
+my @servers = ("sms-server1", "sms-server2");
+```
+
+And, for 2 variables, replace "******" with the password used to establish the connection:
+
+```pl
+my $path = "/SMS?pwd=******&number=$number&notification=1&text=";
+
+my $url = "http://$server:$port/SMS?pwd=******&number=$number&notification=1&text=$msg";
 ```
 
 ## Configuration

@@ -46,8 +46,8 @@ In the Python script `secdetection.py`, update the following global variables :
 ```py
 # Microsoft Graph Security API URL
 GRAPH_API_URL = "https://graph.microsoft.com/v1.0/security"
-# TheHive API URL
-THEHIVE_API_URL = "https://<thehive-url>/api/v1"
+# TheHive API instance URL
+THEHIVE_API_URL = "https://<thehive>/api/v1"
 # path to the configuration file
 CONFIG_FILE_PATH = "<config-file-path>"
 ```
