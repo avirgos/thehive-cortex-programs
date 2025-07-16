@@ -1,0 +1,42 @@
+{
+    "name": "The-Block-List",
+    "version": "1.0",
+    "author": "Antoine Virgos and Lucas Druelle",
+    "url": "",
+    "license": "",
+    "description": "Block a URL or a domain name on the Forcepoint proxy.",
+    "dataTypeList": ["thehive:case_artifact"],
+    "command": "The-Block-List/the-block-list.py",
+    "baseConfig": "The-Block-List",
+    "configurationItems": [
+        {
+            "name": "api_key",
+            "description": "TheHive API key.",
+            "type": "string",
+            "multi": false,
+            "required": true
+        },
+        {
+            "name": "fp_username",
+            "description": "Forcepoint SVC username.",
+            "type": "string",
+            "multi": false,
+            "required": true
+        },
+        {
+            "name": "fp_password",
+            "description": "Forcepoint SVC password.",
+            "type": "string",
+            "multi": false,
+            "required": true
+        },
+        {
+            "name": "category_id_fp",
+            "description": "Forcepoint Category ID list of blocked URLs and domain names.",
+            "type": "string",
+            "multi": false,
+            "required": true
+        }
+    ],
+    "dockerImage": "soc-hcl/the-block-list:1.0"
+}
