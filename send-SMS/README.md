@@ -6,7 +6,7 @@ Cortex responder to send an SMS if a `High` or `Critical` TheHive alert has been
 
 ![cortex-responder](assets/img/cortex-responder.png)
 
-The SMS is sent using the `send-SMS.pl` script. The SMS messages are in the following format :
+The SMS is sent using the `send-SMS.pl` script. The SMS messages are in the following format:
 
 ```
 [On-call duty]
@@ -23,7 +23,7 @@ https://<thehive-url>/alerts/<alert-id>/details
 
 ## Usage
 
-In the Python program `send-SMS.py`, update the following global variables :
+In the Python program `send-SMS.py`, update the following global variables:
 
 ```py
 # phone number to which the SMS will be sent
@@ -32,7 +32,7 @@ SMS_PHONE_NUMBER = "<sms-phone-number>"
 THEHIVE_API_URL = "https://<thehive>/api/v1"
 ```
 
-In the Perl script `send-SMS.pl`, add your SMS servers here :
+In the Perl script `send-SMS.pl`, add your SMS servers here:
 
 ```pl
 my @servers = ("sms-server1", "sms-server2");
@@ -52,7 +52,7 @@ my $url = "http://$server:$port/SMS?pwd=******&number=$number&notification=1&tex
 
 Responder triggering should be configured to run automatically when specific conditions are met to send SMS notifications.
 
-On your TheHive platform, go to "**Organization**" > "**\<organization-name>**" > "**Notifications**" menu and create a notification named "Send SMS". Add the following data :
+On your TheHive platform, go to "**Organization**" > "**\<organization-name>**" > "**Notifications**" menu and create a notification named "Send SMS". Add the following data:
 
 ```json
 {

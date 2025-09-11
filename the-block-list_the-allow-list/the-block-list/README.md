@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ℹ️ We recommend that you create a custom category to store the URLs and domains to be blocked. Note the identifier (a numeric value) assigned to your custom category.
 
-In the Python program `the-block-list.py`, update the following global variables : 
+In the Python program `the-block-list.py`, update the following global variables: 
 
 ```py
 # TheHive API instance URL
@@ -30,6 +30,6 @@ THEHIVE_API_URL = "https://<thehive>/api/v1"
 FORCEPOINT_API_URL = "https://<policy-server>:15873/api/web/v1/categories"
 ```
 
-On Cortex, go to "**Organization**" > "**Responders**" and select the responder "**The-Block-List**". Enter the following parameters :
+On Cortex, go to "**Organization**" > "**Responders**" and select the responder "**The-Block-List**". Enter the following parameters:
 
 ![the-block-list-params](assets/img/the-block-list-params.png)
