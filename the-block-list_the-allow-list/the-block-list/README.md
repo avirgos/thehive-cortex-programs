@@ -19,7 +19,8 @@ pip install -r requirements.txt
 
 ## Usage
 
-ℹ️ We recommend that you create a custom category to store the URLs and domains to be blocked. Note the identifier (a numeric value) assigned to your custom category.
+> **ℹ️ Note**  
+> We recommend that you create a custom category to store the URLs and domains to be blocked. Note the identifier (a numeric value) assigned to your custom category.
 
 In the Python program `the-block-list.py`, update the following global variables: 
 
