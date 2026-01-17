@@ -4,8 +4,9 @@ from cortexutils.responder import Responder
 import subprocess
 import os
 
-# phone number to which the SMS will be sent
+# Phone number to which the SMS will be sent
 SMS_PHONE_NUMBER = "<sms-phone-number>"
+
 # TheHive API instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
 
@@ -23,7 +24,7 @@ class SendSMS(Responder):
         alert_id = self.get_param("data.id", None, "ID not provided.")
         alert_status = self.get_param("data.status", None, "Status not provided.")
 
-        # ignore alerts that are not of High or Critical severity
+        # Ignore alerts that are not of High or Critical severity
         if alert_status == "Ignored" or "Ignore" in alert_title or alert_title == "Connection attempt over HTTP to a deceptive host" or alert_severity <= 2:
             self.report({"status": "Alert ignored, SMS not sent."})
             return

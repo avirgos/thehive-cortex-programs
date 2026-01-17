@@ -7,6 +7,7 @@ import json
 
 # TheHive instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
+
 # Forcepoint Policy Server API URL
 FORCEPOINT_API_URL = "https://<policy-server>:15873/api/web/v1/categories"
 
@@ -59,7 +60,7 @@ class TheAllowList(Responder):
         """
         category_id = int(self.category_id_fp)
 
-        # start transaction
+        # Start transaction
         transaction = requests.post(
             f"{FORCEPOINT_API_URL}/start",
             auth=(self.fp_username, self.fp_password),
@@ -69,7 +70,7 @@ class TheAllowList(Responder):
         )
         transaction_id = transaction.json().get("Transaction ID")
 
-        # remove URL
+        # Remove URL
         delete_data = {
             "Transaction ID": transaction_id,
             "Category ID": category_id,
@@ -77,7 +78,7 @@ class TheAllowList(Responder):
             "IPs": ""
         }
 
-        # file creation
+        # File creation
         filename = 'delete_data.json'
         with open(filename, 'w') as f:
             json.dump(delete_data, f, indent=2)
@@ -93,7 +94,7 @@ class TheAllowList(Responder):
             )
         os.remove(filename)
 
-        # commit
+        # Commit
         commit = requests.post(
             f"{FORCEPOINT_API_URL}/commit?transactionid={transaction_id}",
             auth=(self.fp_username, self.fp_password),

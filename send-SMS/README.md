@@ -26,8 +26,9 @@ https://<thehive-url>/alerts/<alert-id>/details
 In the Python program `send-SMS.py`, update the following global variables:
 
 ```py
-# phone number to which the SMS will be sent
+# Phone number to which the SMS will be sent
 SMS_PHONE_NUMBER = "<sms-phone-number>"
+
 # TheHive API instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
 ```

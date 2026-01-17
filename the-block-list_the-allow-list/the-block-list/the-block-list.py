@@ -56,7 +56,7 @@ class TheBlockList(Responder):
         """
         category_id = int(self.category_id_fp)
 
-        # start transaction
+        # Start transaction
         transaction = requests.post(
             f"{FORCEPOINT_API_URL}/start",
             auth=(self.fp_username, self.fp_password),
@@ -66,7 +66,7 @@ class TheBlockList(Responder):
         )
         transaction_id = transaction.json().get("Transaction ID")
 
-        # add URL or domain name
+        # Add URL or domain name
         add_data = {
             "Transaction ID": transaction_id,
             "Category ID": category_id,
@@ -74,7 +74,7 @@ class TheBlockList(Responder):
             "IPs": ""
         }
 
-        # file creation
+        # File creation
         filename = 'add_data.json'
         with open(filename, 'w') as f:
             json.dump(add_data, f, indent=2)
@@ -90,7 +90,7 @@ class TheBlockList(Responder):
             )
         os.remove(filename)
 
-        # commit
+        # Commit
         commit = requests.post(
             f"{FORCEPOINT_API_URL}/commit?transactionid={transaction_id}",
             auth=(self.fp_username, self.fp_password),

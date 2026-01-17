@@ -7,8 +7,10 @@ from datetime import datetime, timedelta
 
 # Microsoft Graph Security API URL
 GRAPH_API_URL = "https://graph.microsoft.com/v1.0/security"
+
 # TheHive API instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
+
 # path to the configuration file
 CONFIG_FILE_PATH = "<config-file-path>"
 
@@ -267,8 +269,10 @@ def get_time_timezone():
         tuple: The current time and timezone.
     """
     timezone = pytz.timezone("Europe/Paris")
-    # get the current time in the specified timezone and subtract 2 minutes to account for potential delays
+
+    # Get the current time in the specified timezone and subtract 2 minutes to account for potential delays
     now = datetime.now(timezone) - timedelta(minutes=2)
+
     start_search_date = now.isoformat()
     time, timezone = start_search_date.split('+')
 
@@ -284,12 +288,12 @@ if __name__ == "__main__":
         alerts = get_alerts(proxies, aad_token)
         alerts_updated = get_alerts_updated(proxies, aad_token)
 
-        # create new alerts in TheHive for each alert retrieved from Microsoft Graph API
+        # Create new alerts in TheHive for each alert retrieved from Microsoft Graph API
         if alerts and alerts["value"]:
             for alert in alerts["value"]:
                 create_alert(config, alert)
 
-        # update existing alerts in TheHive for each updated alert retrieved from Microsoft Graph API
+        # Update existing alerts in TheHive for each updated alert retrieved from Microsoft Graph API
         if alerts_updated and alerts_updated["value"]:
             for alert_updated in alerts_updated["value"]:
                 update_alert(config, alert_updated)

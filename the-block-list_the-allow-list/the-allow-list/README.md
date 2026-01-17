@@ -27,6 +27,7 @@ In the Python program `the-allow-list.py`, update the following global variables
 ```py
 # TheHive instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
+
 # Forcepoint Policy Server API URL
 FORCEPOINT_API_URL = "https://<policy-server>:15873/api/web/v1/categories"
 ```
