@@ -14,6 +14,18 @@ pip install -r requirements.txt
 - TheHive API key of your service account
 - Proxy settings (optional)
 
+## Configuration
+
+### Execution mode
+
+The Python script should be configured to run automatically at regular intervals to fetch and process new alerts.
+
+Run the script **every minute** using a cron job:
+
+```bash
+* * * * * /usr/bin/python3 /path/to/secdetection.py
+```
+
 ## Usage
 
 To use the `secdetection` Python script, you need to copy the `config-template.json` and rename it to `config.json` using this command:
@@ -52,16 +64,4 @@ THEHIVE_API_URL = "https://<thehive>/api/v1"
 
 # Path to the configuration file
 CONFIG_FILE_PATH = "<config-file-path>"
-```
-
-## Configuration
-
-### Execution mode
-
-The Python script should be configured to run automatically at regular intervals to fetch and process new alerts.
-
-Run the script **every minute** using a cron job:
-
-```bash
-* * * * * /usr/bin/python3 /path/to/secdetection.py
 ```

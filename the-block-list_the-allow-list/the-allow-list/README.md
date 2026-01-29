@@ -17,7 +17,7 @@ pip install -r requirements.txt
 - Proxy settings (optional)
 - Forcepoint Policy Server
 
-## Usage
+## Configuration
 
 > **ℹ️ Note**  
 > We recommend that you create a custom category to store the URLs and domains to be blocked. Note the identifier (a numeric value) assigned to your custom category.
@@ -31,6 +31,8 @@ THEHIVE_API_URL = "https://<thehive>/api/v1"
 # Forcepoint Policy Server API URL
 FORCEPOINT_API_URL = "https://<policy-server>:15873/api/web/v1/categories"
 ```
+
+## Usage
 
 On Cortex, go to "**Organization**" > "**Responders**" and select the responder "**The-Allow-List**". Enter the following parameters:
 

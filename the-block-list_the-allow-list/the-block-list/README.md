@@ -19,6 +19,12 @@ pip install -r requirements.txt
 
 ## Usage
 
+On Cortex, go to "**Organization**" > "**Responders**" and select the responder "**The-Block-List**". Enter the following parameters:
+
+![the-block-list-params](assets/img/the-block-list-params.png)
+
+## Configuration
+
 > **ℹ️ Note**  
 > We recommend that you create a custom category to store the URLs and domains to be blocked. Note the identifier (a numeric value) assigned to your custom category.
 
@@ -31,7 +37,3 @@ THEHIVE_API_URL = "https://<thehive>/api/v1"
 # Forcepoint Policy Server API URL
 FORCEPOINT_API_URL = "https://<policy-server>:15873/api/web/v1/categories"
 ```
-
-On Cortex, go to "**Organization**" > "**Responders**" and select the responder "**The-Block-List**". Enter the following parameters:
-
-![the-block-list-params](assets/img/the-block-list-params.png)
