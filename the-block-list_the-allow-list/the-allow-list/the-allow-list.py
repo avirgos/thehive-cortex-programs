@@ -5,7 +5,7 @@ import os
 import requests
 import json
 
-# TheHive instance URL
+# TheHive API instance URL
 THEHIVE_API_URL = "https://<thehive>/api/v1"
 
 # Forcepoint Policy Server API URL
